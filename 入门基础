@@ -1,0 +1,57 @@
+%{ 本文件参考 MATLAB®入门  仅作为学习笔记提要 %}
+
+MATLAB® 主要用于处理整个的矩阵和数组，而其他编程语言大多逐个处理数值
+创建数组变量时,以 [] 括住元素，各元素之间以 ',' 或 ' ' 间隔；';' 分隔矩阵的不同行元素
+未指定变量名时默认为 ans
+
+矩阵的运算：
+MATLAB 允许使用单一的算术运算符或函数来处理矩阵中的所有值，如+；
+a’ 表示矩阵 a 的转置矩阵；
+inv(a) 表示矩阵 a 的逆矩阵；
+format long (short)用于对于数据输出的格式化；
+%{ format 仅影响数字显示，而不影响 MATLAB 对数字的计算或保存方式。%}
+执行元素级运算而非整个矩阵之间的，在运算符前增加 '.',如 '.*'， '.^'; 
+
+串联运算符[]：将数组串联成更大的数组；
+%{ 相邻数组间以',' 串联称水平串联,各数组须具有相同行数；若各数组具有相同的列数，则可以使用';'分隔称垂直串联。%}
+
+数组索引：
+M(i,j) 表示矩阵中位于第i行，第j列的元素；
+M(k) 表示矩阵按列顺序向下遍历，结束后至下一列遍历；
+M(i1:i2,j) 表示以第i1行至第i2行第j列元素组成的列向量；
+M（i,:) 表示第i行所有元素组成的行向量；
+向量 start:step:end 创建从start开始、以step为步长至end结束的等距向量值；  % 未输入step值时默认步长为1；
+
+magic squares:     % syntax: variable_name = magic(n);
+  Definition:   An n-by-n magic square is an array containing the integers from 1 to n^2,
+                arranged so that each of the rows, each of the columns, and the two principal 
+                diagonals have the same sum. 
+
+%{
+    退出 MATLAB 后，工作区变量不会被保留；可以使用 save 命令保存数据以供将来使用，
+    save myfile.mat
+    通过保存，系统会使用 .mat 扩展名将工作区保存在当前工作文件夹中一个名为 MAT 文件的压缩文件中。
+    要清除工作区中的所有变量，则使用 clear 命令。
+    使用 load 将 MAT 文件中的数据还原到工作区。
+    load myfile.mat
+%}
+
+文本处理：
+以 "" 括住赋值文本；若文本含有 "" ,将其替换为 """"； 
+    % q = "Something ""quoted"" and something else."
+以文本赋值的变量为以string为数据类型的数组；
+字符串末尾使用 '+' 添加文本；
+    %{ input:
+       f = 71;
+       c = (f-32)/1.8;
+       tempText = "Temperature is " + c + "C"
+
+       output:
+       tempText =
+                "Temperature is 21.6667C"
+    %}
+
+strlength:
+   
+
+
