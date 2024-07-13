@@ -51,7 +51,6 @@ magic squares:     % syntax: variable_name = magic(n);
                 "Temperature is 21.6667C"
     %}
 
-strlength:
-   
+strlength: 求数组中每个字符串的长度
 
 
