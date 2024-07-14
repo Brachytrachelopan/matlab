@@ -1,3 +1,22 @@
+多个图像 ( a*b 个图表)
+
+titledlayout(a,b);
+title(t,"title");
+x = linspace(x0,x1);
+
+%{ the first one %}
+nexttitle
+plot(x,y1(x));
+title("subtitle1");
+
+%{ the second one %}
+nexttitle
+plot(x,y2(x));
+title("subtitle2");
+
+...
+
+
 二维图
 
 plot(x,y)
@@ -26,4 +45,5 @@ plot(x,y,"r--")
 三维图
 
 surf(x,y,z) :f 使用颜色显示曲面图的连接线和面
-mesh(): 生成仅以颜色标记连接线条的线框曲面图
+mesh(x,y,z): 生成仅以颜色标记连接线条的线框曲面图
+
