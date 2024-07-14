@@ -16,11 +16,18 @@ plot(x,y,"r--")
       y = linspace(x1,x2,n) ：生成间距为 (x2-x1)/(n-1)的 n 个点
 
    标签添加：
-     xlable()
-     ylable()
-     title()
-   legend("","",...) :添加图例
+     xlable("")
+     ylable("")
+     title("")
+     legend("","",...) :添加图例
 %}
+
+
+
+
+
+
+
 
 三维图
 
