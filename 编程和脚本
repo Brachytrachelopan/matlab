@@ -6,4 +6,16 @@
 使用 edit 命令创建脚本
    edit filename: 打开 filename.m 空白文件
    
-   
+使用 edit 命令创建新的实时脚本：
+   edit newfile.mlx  % 在文件名中包含 .mlx 扩展
+
+
+一些特殊函数提供了有用的常量值。
+pi 3.14159265...
+i 虚数单位 −1
+j 与 i 相同
+eps 浮点相对精度 ε = 2−52
+realmin 最小浮点数 2−1022
+realmax 最大浮点数 (2 − ε)21023
+Inf 无穷
+NaN 非数字
