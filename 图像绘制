@@ -47,3 +47,46 @@ plot(x,y,"r--")
 surf(x,y,z) :使用颜色显示曲面图的连接线和面
 mesh(x,y,z): 生成仅以颜色标记连接线条的线框曲面图
 
+      %{  
+         语法1：  mesh(X,Y,Z) 创建一个网格三维曲图，实线边有颜色但面无颜色。
+                 该函数将矩阵 Z 中的值绘制为由 X 和 Y 定义的 x-y 平面中网格上方的高度。
+                 边颜色因 Z 指定的高度而异。   
+         语法2：  mesh(Z) 创建一个网格图，并将 Z 中元素的列索引和行索引用作 x 坐标和 y 坐标。
+         语法3：  mesh(___,Name,Value) 使用一个或多个名称-值对组参量指定曲面属性。
+                 例如，'FaceAlpha',0.5 创建半透明网格图。
+         语法4： 
+      %}
+      
+      
+      % 图像绘制可以改变图像中心位置；如surf(x - a,y - b, z - c) 以 (a,b,c) 为中心。
+      
+      % [x,y,z] = sphere;  返回 20×20 个面组成的单位球的三个 21×21 x、y、z 坐标矩阵但不绘图。
+      % [X,Y,Z] = sphere(n); 以三个 (n+1)×(n+1) 矩阵形式返回包含 n×n 个面的单位球面的 x、y 和 z 坐标。
+
+meshgrid() 绘制多变量函数：(以 y=f(x1,x2)=x1^2+x2^2 为例)
+      由表达式推导的步骤为：
+         x1=0:4; 
+         x2=0:5;
+         y=x1.^2+x2.^2;
+      但此方法无法达成预期，因为 x1 矩阵和 x2 矩阵大小不同，无法直接相加；且以上函数定义在两个不同变量上而非变量组成的平面上
+
+      This grid is a collection of coordinate pairs, arranged in 2-D.
+      Now, let's put the first coordinates in a matrix, x1g:
+   
+     x1g=  0    1    2    3    4
+           0    1    2    3    4
+           0    1    2    3    4
+           0    1    2    3    4
+           0    1    2    3    4
+           0    1    2    3    4
+   
+   and the second coordinates in another matrix, x2g:
+   
+     x2g=  0    0    0    0    0
+           1    1    1    1    1
+           2    2    2    2    2
+           3    3    3    3    3
+           4    4    4    4    4
+           5    5    5    5    5
+
+ [X,Y] = meshgrid(x,y)
